@@ -25,18 +25,15 @@ Vagrant.configure('2') do |config|
   #config.vm.box = "opscode-ubuntu-16.04"
   #config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-16.04_chef-provisionerless.box"
   config.omnibus.chef_version = :latest
-  
-  config.vm.provision :"chef_client" do |chef| 
-	#chef.cookbooks_path = "/home/ddiaz/chef-repo/cookbooks"
-	chef.add_recipe "httpd_test-0.1.0"
+  config.vm.provision :chef_client do |chef| 
 	chef.provisioning_path = "/etc/chef"
-	chef.chef_server_url = "https://api/chef.io/test_ddiaz"
-	chef.validation_key_path = "/home/ddiaz/chef-repo/.chef/diazdj.pem"
+	chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
+	chef.validation_key_path = ".chef/diazdj.pem"
 	chef.validation_client_name = "diazdj"
-	chef.node_name = "stupid"
+	chef.node_name = "server"
 	chef.arguments = "--chef-license accept"
-        #chef.run_list = "recipe [ httpd_test-0.1.0 :: default]"
-end
+	chef.add_recipe "httpd_test::default"
+	#chef.client_key_path = "/etc/chef/validation.pem"
   #  Use rsync and NFS synced folders. (or use the option to disable them)
   #    https://www.vagrantup.com/docs/synced-folders/
   #config.vm.synced_folder('.', '/vagrant', type: 'rsync')
@@ -102,13 +99,14 @@ end
 
     #  OPTIONAL.  Guest VM name to use.
     #    The Default will be automatically generated.
-    esxi.guest_name = 'test_node'
-
+    #esxi.guest_name = 'Custom-Guest-VM_Name'
     #  OPTIONAL.  When automatically naming VMs, use this prefix.
     #esxi.guest_name_prefix = 'V-'
 
     #  OPTIONAL.  Set the guest username login.  The default is 'vagrant'.
-    esxi.guest_username = 'ddiaz'
+
+    #esxi.guest_username = 'vagrant'
+
 
     #  OPTIONAL.  Memory size override
     #esxi.guest_memsize = '2048'
@@ -183,5 +181,6 @@ end
     #    Please send any bug reports with this debug output...
     #esxi.debug = 'true'
 end
+  end
 
 end
