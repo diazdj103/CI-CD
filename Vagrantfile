@@ -25,7 +25,6 @@ Vagrant.configure('2') do |config|
   #config.vm.box = "opscode-ubuntu-16.04"
   #config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-16.04_chef-provisionerless.box"
   config.omnibus.chef_version = :latest
-  
   config.vm.provision :chef_client do |chef| 
 	chef.provisioning_path = "/etc/chef"
 	chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
@@ -101,12 +100,13 @@ Vagrant.configure('2') do |config|
     #  OPTIONAL.  Guest VM name to use.
     #    The Default will be automatically generated.
     #esxi.guest_name = 'Custom-Guest-VM_Name'
-
     #  OPTIONAL.  When automatically naming VMs, use this prefix.
     #esxi.guest_name_prefix = 'V-'
 
     #  OPTIONAL.  Set the guest username login.  The default is 'vagrant'.
+
     #esxi.guest_username = 'vagrant'
+
 
     #  OPTIONAL.  Memory size override
     #esxi.guest_memsize = '2048'
@@ -182,4 +182,5 @@ Vagrant.configure('2') do |config|
     #esxi.debug = 'true'
 end
   end
+
 end
