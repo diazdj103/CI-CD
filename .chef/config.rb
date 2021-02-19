@@ -7,3 +7,6 @@ node_name                "diazdj"
 client_key               "#{current_dir}/diazdj.pem"
 chef_server_url          "https://api.chef.io/organizations/diazdj"
 cookbook_path            ["#{current_dir}/../cookbooks"]
+coobook_copyright	 "Daniel Diaz"
+cookbook_license	 "apachev2"
+cookbook_email	 	 "danieldiaz648@gmail.com"
