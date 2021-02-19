@@ -11,7 +11,8 @@ Vagrant.configure('2') do |config|
   #
   # Here are some of the MANY examples....
   #config.vm.box = 'hashicorp/precise64'
-  config.vm.box = 'generic/centos7'
+  config.vm.box = 'generic/centos8'
+  #config.vm.box = 'generic/centos7'
   #config.vm.box = 'generic/centos6'
   #config.vm.box = 'generic/fedora27'
   #config.vm.box = 'generic/freebsd11'
@@ -24,13 +25,15 @@ Vagrant.configure('2') do |config|
   #config.vm.box = 'puphpet/debian75-x64'
   #config.vm.box = "opscode-ubuntu-16.04"
   #config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-16.04_chef-provisionerless.box"
-  config.omnibus.chef_version = :latest
+
+  # config.omnibus.chef_version = :latest
+
   config.vm.provision :chef_client do |chef| 
 	chef.provisioning_path = "/etc/chef"
 	chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
 	chef.validation_key_path = ".chef/diazdj.pem"
 	chef.validation_client_name = "diazdj"
-	chef.node_name = "server"
+	chef.node_name = "Webserver01"
 	chef.arguments = "--chef-license accept"
 	chef.add_recipe "httpd_test::default"
 	#chef.client_key_path = "/etc/chef/validation.pem"
@@ -75,7 +78,7 @@ Vagrant.configure('2') do |config|
     esxi.esxi_password = 'GOdofwar103@@'
 
     #  SSH port.
-    #esxi.esxi_hostport = 22
+    esxi.esxi_hostport = 22
 
     #  HIGHLY RECOMMENDED!  ESXi Virtual Network
     #    You should specify an ESXi Virtual Network!  If it's not specified, the
@@ -99,7 +102,10 @@ Vagrant.configure('2') do |config|
 
     #  OPTIONAL.  Guest VM name to use.
     #    The Default will be automatically generated.
-    #esxi.guest_name = 'Custom-Guest-VM_Name'
+
+    esxi.guest_name = 'test-node01'
+
+
     #  OPTIONAL.  When automatically naming VMs, use this prefix.
     #esxi.guest_name_prefix = 'V-'
 

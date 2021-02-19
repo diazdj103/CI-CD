@@ -1,1 +1,1 @@
-{"name":"generic/centos7","version":"3.1.8","provider":"vmware_desktop","directory":"boxes/generic-VAGRANTSLASH-centos7/3.1.8/vmware_desktop"}
+{"name":"generic/centos8","version":"3.1.16","provider":"vmware_desktop","directory":"boxes/generic-VAGRANTSLASH-centos8/3.1.16/vmware_desktop"}

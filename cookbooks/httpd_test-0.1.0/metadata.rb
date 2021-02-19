@@ -1,9 +1,9 @@
 name 'httpd_test'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Daniel Diaz'
+maintainer_email 'danieldiaz648@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures httpd_test'
-version '0.1.0'
+version '0.1.1'
 chef_version '>= 15.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
@@ -16,4 +16,4 @@ chef_version '>= 15.0'
 # `View Source` link will be displayed on this cookbook's page when uploaded to
 # a Supermarket.
 #
-# source_url 'https://github.com/<insert_org_here>/httpd_test'
+# source_url 'https://github.com/diazdj103/cook_books'
