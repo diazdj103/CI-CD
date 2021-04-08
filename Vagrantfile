@@ -22,7 +22,7 @@ Vagrant.configure('2') do |config|
     esxi.guest_name = 'test-node01'
   end
 end
-  
+end
 config.vm.define "VM2" do |subconfig1|
   subconfig1.vm.box = 'generic/centos8'
   subconfig1.vm.provision :chef_client do |chef| 
@@ -44,7 +44,7 @@ config.vm.define "VM2" do |subconfig1|
     esxi.esxi_hostport = 22
     esxi.guest_name = 'test-node02'
   
-end
+
 end
 end
 end
