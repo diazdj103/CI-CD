@@ -22,8 +22,7 @@ Vagrant.configure('2') do |config|
     esxi.esxi_hostport = 22
     esxi.guest_name = 'test-node01'
    end
-  end
-end
+  
 
 Vagrant.configure('2') do |config|
 
@@ -48,4 +47,6 @@ Vagrant.configure('2') do |config|
     esxi.guest_name = 'test-node02'
    end
   end
+end
+end
 end
