@@ -21,7 +21,7 @@ Vagrant.configure('2') do |config|
     #  SSH port.
     esxi.esxi_hostport = 22
     esxi.guest_name = 'test-node01'
-   end
+
   
 
   config.vm.box = 'generic/centos8'
@@ -47,4 +47,4 @@ Vagrant.configure('2') do |config|
   end
 end
 end
-
+end
