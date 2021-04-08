@@ -47,3 +47,4 @@ config.vm.define "VM2" do |subconfig1|
 end
 end
 end
+end
