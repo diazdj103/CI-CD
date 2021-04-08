@@ -45,6 +45,7 @@ config.vm.define "VM2" do |subconfig1|
     esxi.guest_name = 'test-node02'
   
 
-end
-end
+   end
+  end
+ end
 end
