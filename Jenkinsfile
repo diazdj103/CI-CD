@@ -19,6 +19,9 @@ pipeline {
                 sh 'vagrant plugin install vagrant-winrm-syncedfolders'
                 sh 'vagrant plugin install vagrant-reload'
                 sh 'vagrant up' 
+	    dir("webserver") {
+                sh "vagrant up"
+             }
             }
         }
     }
