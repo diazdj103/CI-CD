@@ -16,7 +16,7 @@ Vagrant.configure('2') do |config|
 end
  
 config.vm.define "VM2" do |subconfig1|
-  subconfig1.vm.box = 'generic/centos8'| 
+  subconfig1.vm.box = 'generic/centos8'
   subconfig1.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
   subconfig1.vm.provider :vmware_esxi do |esxi|
     esxi.esxi_hostname = '192.168.0.166' 
