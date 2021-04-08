@@ -24,8 +24,6 @@ Vagrant.configure('2') do |config|
    end
   
 
-Vagrant.configure('2') do |config|
-
   config.vm.box = 'generic/centos8'
   config.vm.provision :chef_client do |chef| 
 	chef.provisioning_path = "/etc/chef"
@@ -49,4 +47,4 @@ Vagrant.configure('2') do |config|
   end
 end
 end
-end
+
