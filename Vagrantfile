@@ -44,7 +44,7 @@ config.vm.define "VM2" do |subconfig1|
    end
   end
  end
- 
+
  config.vm.define "VM3" do |subconfig2|
   subconfig2.vm.box = 'generic/centos8'
   subconfig2.vm.provision :chef_client do |chef| 
@@ -61,7 +61,7 @@ config.vm.define "VM2" do |subconfig1|
     esxi.esxi_username = 'root'
     esxi.esxi_password = 'GOdofwar103@@'
     esxi.esxi_hostport = 22
-    esxi.guest_name = 'test-node02'  
+    esxi.guest_name = 'test-node03'  
    end
   end
  end
