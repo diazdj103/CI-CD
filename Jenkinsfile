@@ -16,7 +16,8 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh 'vagrant up' 
+                sh 'BRANCH=git checkout'
+                sh ' BRANCH vagrant up' 
             }
         }
         stage('Deploying webserver2') {
