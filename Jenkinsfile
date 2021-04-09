@@ -5,9 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'vagrant plugin install vagrant-vmware-esxi'
-                sh 'vagrant plugin install vagrant-winrm-syncedfolders'
-                sh 'vagrant plugin install vagrant-reload'
+                sh 'bash plugins.sh'
             }
         }
         stage('Test') {
