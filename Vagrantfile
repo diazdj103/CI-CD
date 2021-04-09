@@ -15,29 +15,6 @@ Vagrant.configure('2') do |config|
  end
 end
  
-config.vm.define "VM2" do |subconfig1|
-  subconfig1.vm.box = 'generic/centos8'
-  subconfig1.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
-  subconfig1.vm.provider :vmware_esxi do |esxi|
-    esxi.esxi_hostname = '192.168.0.166' 
-    esxi.esxi_username = 'root'
-    esxi.esxi_password = 'GOdofwar103@@'
-    esxi.esxi_hostport = 22
-    esxi.guest_name = 'test-node02'  
-  end
- end
-
- config.vm.define "VM3" do |subconfig2|
-  subconfig2.vm.box = 'generic/centos8'
-  subconfig2.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
-  subconfig2.vm.provider :vmware_esxi do |esxi|
-    esxi.esxi_hostname = '192.168.0.166' 
-    esxi.esxi_username = 'root'
-    esxi.esxi_password = 'GOdofwar103@@'
-    esxi.esxi_hostport = 22
-    esxi.guest_name = 'test-node03'  
-   end
-  end
   config.vm.provision :chef_client do |chef| 
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"

@@ -5,6 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'vagrant plugin install vagrant-vmware-esxi'
+                sh 'vagrant plugin install vagrant-winrm-syncedfolders'
+                sh 'vagrant plugin install vagrant-reload'
             }
         }
         stage('Test') {
@@ -14,11 +17,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
-		sh 'vagrant plugin install vagrant-vmware-esxi'
-                sh 'vagrant plugin install vagrant-winrm-syncedfolders'
-                sh 'vagrant plugin install vagrant-reload'
+                echo 'Deploying....Webserver1'
                 sh 'vagrant up' 
+                echo 'Deploying webserver2'
+        dir("webserver") {
+             sh "vangrant up"
+              }
             }
         }
     }
