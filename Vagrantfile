@@ -29,14 +29,6 @@ config.vm.define "VM2" do |subconfig1|
 
  config.vm.define "VM3" do |subconfig2|
   subconfig2.vm.box = 'generic/centos8'
-  subconfig2.vm.provision :chef_client do |chef| 
-	  chef.provisioning_path = "/etc/chef"
-	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
-	  chef.validation_key_path = ".chef/diazdj.pem"
-	  chef.validation_client_name = "diazdj"
-	  chef.node_name = "Webserver01"
-	  chef.arguments = "--chef-license accept"
-	  chef.add_recipe "httpd_test::default"
   subconfig2.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
   subconfig2.vm.provider :vmware_esxi do |esxi|
     esxi.esxi_hostname = '192.168.0.166' 
@@ -46,5 +38,13 @@ config.vm.define "VM2" do |subconfig1|
     esxi.guest_name = 'test-node03'  
    end
   end
+  config.vm.provision :chef_client do |chef| 
+	  chef.provisioning_path = "/etc/chef"
+	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
+	  chef.validation_key_path = ".chef/diazdj.pem"
+	  chef.validation_client_name = "diazdj"
+	  chef.node_name = "Webserver01"
+	  chef.arguments = "--chef-license accept"
+	  chef.add_recipe "httpd_test::default"
  end
 end
