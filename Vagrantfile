@@ -1,3 +1,25 @@
+#Testing for required plugins
+unless Vagrant.has_plugin?("vagrant-vmware-esxi")
+  raise <<-eos
+Error! Required 'vagrant-vmware-esxi' plugin is not installed.
+Please run 'vagrant plugin install vagrant-dns'
+eos
+end
+unless Vagrant.has_plugin?("vagrant-winrm-syncedfolders")
+  raise <<-eos
+Error! Required 'vagrant-winrm-syncedfolders' plugin is not installed.
+Please run 'vagrant plugin install vagrant-dns'
+eos
+end
+unless Vagrant.has_plugin?("vagrant-reload")
+  raise <<-eos
+Error! Required 'vagrant-reload' plugin is not installed.
+Please run 'vagrant plugin install vagrant-dns'
+eos
+end
+#####Testing Vagrant file complete
+
+
 
 Vagrant.configure('2') do |config|
   config.vm.define "VM1" do |subconfig|
