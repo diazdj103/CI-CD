@@ -1,4 +1,4 @@
  #!/bin/bash
-branch=branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
-echo "Thies is the $branch branch" 
+branch=$(git rev-parse --abbrev-ref HEAD)
+echo "This is the $branch branch" 
 vagrant  up $branch
