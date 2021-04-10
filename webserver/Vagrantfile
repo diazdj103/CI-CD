@@ -10,7 +10,7 @@ Vagrant.configure('2') do |config|
       esxi.esxi_password = 'P@sswordP@ssword'
       #  SSH port.
       esxi.esxi_hostport = 22
-      esxi.guest_name = "development-node02"
+      esxi.guest_name = 'development-node02'
    end
   end
    
@@ -24,4 +24,5 @@ Vagrant.configure('2') do |config|
         chef.add_recipe "httpd_test::default"
    end
   end
+  
   
