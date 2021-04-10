@@ -1,5 +1,3 @@
-branch = ENV[$branch] 
-
 
 Vagrant.configure('2') do |config|
     config.vm.define "development-VM2" do |subconfig|
