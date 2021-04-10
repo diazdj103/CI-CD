@@ -20,9 +20,12 @@ end
 #####Testing Vagrant file complete
 
 
+branch = `git rev-parse --abbrev-ref HEAD` 
+
+
 
 Vagrant.configure('2') do |config|
-  config.vm.define "development-VM1" do |subconfig|
+  config.vm.define branch"-VM1" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
     subconfig.vm.provider :vmware_esxi do |esxi|
@@ -33,7 +36,7 @@ Vagrant.configure('2') do |config|
     esxi.esxi_password = 'P@sswordP@ssword'
     #  SSH port.
     esxi.esxi_hostport = 22
-    esxi.guest_name = 'development-node01'
+    esxi.guest_name = branch"-node01'
  end
 end
  
