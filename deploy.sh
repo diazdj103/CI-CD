@@ -4,6 +4,6 @@ branch="environment"
 function getSomeString {
  git rev-parse --abbrev-ref HEAD
 }
-getSomeString branch
+branch= getSomeString 
 echo "This is the $branch branch" 
 vagrant  up $branch
