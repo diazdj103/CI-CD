@@ -22,11 +22,12 @@ end
 
 branch = <<-'SCRIPT' 
    git rev-parse --abbrev-ref HEAD 
-   SCRIPT  
+   'SCRIPT'  
 
 
 
 Vagrant.configure('2') do |config|
+  config.vm.provision "shell",
   config.vm.define "#{branch}-VM1" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
