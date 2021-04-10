@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Deploying....Webserver1'
                 sh "branch=\$(git rev-parse --abbrev-ref HEAD)"
-                sh  "\$branch vagrant up" 
+                sh  " vagrant \$branch up" 
             }
         }
         stage('Deploying webserver2') {
