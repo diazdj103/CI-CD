@@ -21,9 +21,7 @@ end
 
 
  
-   branch = <<-SCRIPT
-   git rev-parse --abbrev-ref HEAD
-   SCRIPT
+branch = `git rev-parse --abbrev-ref HEAD`
 
 
 Vagrant.configure('2') do |config|
