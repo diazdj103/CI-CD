@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "./deploy.sh" 
+                sh "bash deploy.sh" 
             }
         }
         stage('Deploying webserver2') {
