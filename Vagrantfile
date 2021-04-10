@@ -20,7 +20,9 @@ end
 #####Testing Vagrant file complete
 
 
-branch = <<-'SCRIPT' 'git rev-parse --abbrev-ref HEAD' SCRIPT  
+branch = <<-'SCRIPT' 
+   git rev-parse --abbrev-ref HEAD 
+   SCRIPT  
 
 
 
