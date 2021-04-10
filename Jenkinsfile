@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "vagrant up " + env.BRANCH_NAME 
+                sh "vagrant up " + env.BRANCH_NAME +"-VM1"
             }
         }
         stage('Deploying webserver2') {
