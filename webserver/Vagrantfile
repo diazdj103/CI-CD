@@ -1,4 +1,3 @@
-
 Vagrant.configure('2') do |config|
     config.vm.define "development-VM2" do |subconfig|
       subconfig.vm.box = 'generic/centos8'
