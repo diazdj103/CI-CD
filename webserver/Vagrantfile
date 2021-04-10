@@ -1,4 +1,4 @@
-branch = `git rev-parse --abbrev-ref HEAD` 
+branch = <<-'SCRIPT' 'git rev-parse --abbrev-ref HEAD' SCRIPT  
 
 Vagrant.configure('2') do |config|
     config.vm.define "#{branch}-VM2" do |subconfig|
