@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "printenv" 
+                sh "printenv.GIT_BRANCH" 
             }
         }
         stage('Deploying webserver2') {
