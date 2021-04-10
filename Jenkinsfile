@@ -16,14 +16,14 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "vagrant up "
+                sh "vagrant up"
             }
         }
         stage('Deploying webserver2') {
             steps {
                 echo 'Deploying..'
                 dir("webserver") {
-             sh "vagrant up "
+             sh "vagrant up"
               }
             }
         }
