@@ -20,7 +20,7 @@ end
 #####Testing Vagrant file complete
 
 
-branch = ENV['env.BRANCH_NAME']
+branch = ENV[ ]
 
 
 Vagrant.configure('2') do |config|
