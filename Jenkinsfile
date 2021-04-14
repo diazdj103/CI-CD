@@ -1,6 +1,6 @@
 pipeline {
     agent any
-     options([parameters([choice(choices: ['development', 'main', 'production'], description: 'These options will tell the build file which environment to build')])])
+     parameters([choice(choices: ['development', 'main', 'production'], description: 'These options will tell the build file which environment to build'name: 'environment')])
     stages {
         stage('Build') {
             steps {
