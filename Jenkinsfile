@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    properties([
+    options([
   parameters([
     string(name: 'branch', defaultValue: 'development'),
   ])
