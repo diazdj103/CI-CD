@@ -18,11 +18,12 @@ Please run 'vagrant plugin install vagrant-dns'
 eos
 end
 #####Testing Vagrant file complete
+environment = ['environment']
 
-
-
+#### Development deploys here
 Vagrant.configure('2') do |config|
-  config.vm.define "development-VM1" do |subconfig|
+  if environment == development 
+  config.vm.define "development" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
     subconfig.vm.provider :vmware_esxi do |esxi|
@@ -34,9 +35,56 @@ Vagrant.configure('2') do |config|
     #  SSH port.
     esxi.esxi_hostport = 22
     esxi.guest_name = "development-node01"
- end
 end
- 
+
+
+  config.vm.define "development-VM2" do |subconfig|
+    subconfig.vm.box = 'generic/centos8'
+    subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
+    subconfig.vm.provider :vmware_esxi do |esxi|
+    #  REQUIRED!  ESXi hostname/IP
+    esxi.esxi_hostname = '192.168.0.39' 
+    #  ESXi username
+    esxi.esxi_username = 'provision'
+    esxi.esxi_password = 'P@sswordP@ssword'
+    #  SSH port.
+    esxi.esxi_hostport = 22
+    esxi.guest_name = 'development-node02'
+    end
+   end
+
+else ##Main Deployment
+  config.vm.define "main" do |subconfig1|
+    subconfig1.vm.box = 'generic/centos8'
+    subconfig1.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
+    subconfig1.vm.provider :vmware_esxi do |esxi|
+    #  REQUIRED!  ESXi hostname/IP
+    esxi.esxi_hostname = '192.168.0.39' 
+    #  ESXi username
+    esxi.esxi_username = 'provision'
+    esxi.esxi_password = 'P@sswordP@ssword'
+    #  SSH port.
+    esxi.esxi_hostport = 22
+    esxi.guest_name = "main-node01"
+    end
+    end
+
+  config.vm.define "main-VM2" do |subconfig2|
+    subconfig2.vm.box = 'generic/centos8'
+    subconfig2.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
+    subconfig2.vm.provider :vmware_esxi do |esxi|
+    #  REQUIRED!  ESXi hostname/IP
+    esxi.esxi_hostname = '192.168.0.39' 
+    #  ESXi username
+    esxi.esxi_username = 'provision'
+    esxi.esxi_password = 'P@sswordP@ssword'
+    #  SSH port.
+    esxi.esxi_hostport = 22
+    esxi.guest_name = 'main-node02'
+end
+end
+end
+
   config.vm.provision :chef_client do |chef| 
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
