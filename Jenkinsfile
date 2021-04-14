@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    properties([
+  parameters([
+    string(name: 'branch', defaultValue: 'development'),
+  ])
+])
 
     stages {
         stage('Build') {
@@ -16,8 +21,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "environment=" env.BRANCH_NAME
-                sh "vagrant up"
+                sh "vagrant up " + branch
             }
         }
         stage('Deploying webserver2') {
