@@ -1,11 +1,7 @@
 pipeline {
     agent any
-    options([
-  parameters([
-    string(name: 'branch', defaultValue: 'development'),
-  ])
-])
-
+     parameters { string(name: 'DEPLOY_ENV', defaultValue: 'development', description: 'This is the current branch') 
+     }
     stages {
         stage('Build') {
             steps {
@@ -21,7 +17,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "vagrant up " + branch
+                sh "vagrant up " + DEPLOY_ENV
             }
         }
         stage('Deploying webserver2') {
