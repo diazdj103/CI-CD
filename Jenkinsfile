@@ -1,7 +1,6 @@
 pipeline {
     agent any
-     parameters { string(name: 'DEPLOY_ENV', defaultValue: 'development', description: 'This is the current branch') 
-     }
+     properties([parameters([choice(choices: ['development', 'main', 'production'], description: 'These options will tell the build file which environment to build', name: 'Branch Builds')])])
     stages {
         stage('Build') {
             steps {
