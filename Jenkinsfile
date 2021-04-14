@@ -1,6 +1,6 @@
 pipeline {
     agent any
-     options([parameters([choice(choices: ['development', 'main', 'production'], description: 'These options will tell the build file which environment to build', name: 'DEPLOY_ENV')])])
+     options([parameters([choice(choices: ['development', 'main', 'production'], description: 'These options will tell the build file which environment to build', name: 'environment')])])
     stages {
         stage('Build') {
             steps {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "vagrant up " + DEPLOY_ENV
+                sh "vagrant up " + environment
             }
         }
         stage('Deploying webserver2') {
