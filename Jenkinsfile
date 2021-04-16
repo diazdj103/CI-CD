@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-    choice(name: 'Environment', choices: ['development', 'main', 'production'], description: 'Pick the environment branch')
+    choice(name: 'environment', choices: ['development', 'main', 'production'], description: 'Pick the environment branch')
   }
     stages {
         stage('Build') {
@@ -18,7 +18,7 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "vagrant up " + environment
+                sh "python3 management.py" 
             }
         }
         stage('Deploying webserver2') {
