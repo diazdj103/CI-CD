@@ -4,6 +4,7 @@ import logging
 
 
 environment = os.getenv("environment")
+print (environment)
 
 def determine_environment (environment="development"):
     if environment != "development" or "main" or "production":
