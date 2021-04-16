@@ -1,9 +1,7 @@
 pipeline {
     agent any
     parameters {
-    string( name: 'environment', 
-            defaultValue: 'development', 
-            description: 'Choosing a branch')
+    choice(name: 'Environment', choices: ['development', 'main', 'production'],defaultValue: 'development' description: 'Pick the environment branch')
   }
     stages {
         stage('Build') {
