@@ -23,7 +23,7 @@ end
 #### Development deploys here
 Vagrant.configure('2') do |config|
   
-  config.vm.define "development" do |subconfig|
+  config.vm.define "development-VM1" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
     subconfig.vm.provider :vmware_esxi do |esxi|
