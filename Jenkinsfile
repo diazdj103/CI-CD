@@ -18,7 +18,8 @@ pipeline {
         stage('Deploying Webserver1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "python3 management.py \$ENVIRONMENT" 
+                sh "echo \$environment"
+                sh "python3 management.py \$environment" 
             }
         }
         stage('Deploying webserver2') {
