@@ -22,6 +22,7 @@ end
 
 #### Development deploys here
 Vagrant.configure('2') do |config|
+
   config.vm.define "development-vm1" do |config|
     config.vm.box = 'generic/centos8'
     config.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
@@ -54,6 +55,7 @@ config.vm.define "main-vm1" do |config|
   esxi.esxi_password = 'GOdofwar103@@'
   esxi.esxi_hostport = 22
   esxi.guest_name = "main-vm1"
+
 end
 end
 config.vm.define "main-vm2" do |subconfig|
