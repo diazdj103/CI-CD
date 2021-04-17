@@ -34,7 +34,7 @@ Vagrant.configure('2') do |config|
     esxi.esxi_password = 'P@sswordP@ssword'
     #  SSH port.
     esxi.esxi_hostport = 22
-    esxi.guest_name = "development-node01"
+    esxi.guest_name = "development-VM1"
 end
 end
 
