@@ -2,7 +2,6 @@ Vagrant.configure('2') do |config|
 
     config.vm.define "development-VM2" do |subconfig|
       subconfig.vm.box = 'generic/centos7'
-
       subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
       subconfig.vm.provider :vmware_esxi do |esxi|
       #  REQUIRED!  ESXi hostname/IP
@@ -14,7 +13,6 @@ Vagrant.configure('2') do |config|
       esxi.esxi_hostport = 22
 
       esxi.guest_name = 'development-node02'
-
   end
    
     config.vm.provision :chef_client do |chef| 
