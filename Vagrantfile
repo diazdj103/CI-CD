@@ -23,7 +23,7 @@ end
 #### Development deploys here
 Vagrant.configure('2') do |config|
   
-  config.vm.define "development-VM1" do |subconfig|
+  config.vm.define "development-vm1" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
     subconfig.vm.provider :vmware_esxi do |esxi|
@@ -34,7 +34,7 @@ Vagrant.configure('2') do |config|
     esxi.esxi_password = 'P@sswordP@ssword'
     #  SSH port.
     esxi.esxi_hostport = 22
-    esxi.guest_name = "development-VM1"
+    esxi.guest_name = "development-vm1"
 end
 end
 
