@@ -6,7 +6,7 @@ import logging
 environment = os.environ.get("environment")
 print (environment)
 
-def determine_environment (environment="development"):
+def determine_environment (environment):
     logging.info("The environment is " + environment)
     if environment != "development" or "main" or "production":
         logging.error("Invalid choice")
