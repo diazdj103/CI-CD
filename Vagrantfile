@@ -43,7 +43,7 @@ end
 	  chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
 end
-end
+
   config.vm.define "development-vm2" do |subconfig|
     subconfig.vm.box = 'generic/centos8'
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
@@ -64,6 +64,5 @@ end
 	  chef.node_name = "Webserver01"
 	  chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
-end
 end
 end
