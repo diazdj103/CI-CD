@@ -15,10 +15,10 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploying Webserver1') {
+        stage('Deploying Subsystem 1') {
             steps {
                 echo 'Deploying....Webserver1'
-                sh "echo \$environment"
+                sh "echo This is from the \$environment"
                 sh "python3 management.py \$environment" 
             }
         }
