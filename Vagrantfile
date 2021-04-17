@@ -30,8 +30,8 @@ Vagrant.configure('2') do |config|
     #  REQUIRED!  ESXi hostname/IP
     esxi.esxi_hostname = '192.168.0.166' 
     #  ESXi username
-    esxi.esxi_username = 'provision'
-    esxi.esxi_password = 'P@sswordP@ssword'
+    esxi.esxi_username = 'root'
+    esxi.esxi_password = 'GOdofwar103@@'
     #  SSH port.
     esxi.esxi_hostport = 22
     esxi.guest_name = "development-vm1"
