@@ -18,7 +18,7 @@ def determine_environment (environment):
         os.system("vagrant up main-vm1")
         os.system("vagrant up main-vm2")
 
-     elif environment == "production":
+    elif environment == "production":
         os.system("vagrant up production-vm1")
         os.system("vagrant up production-vm2")
 
