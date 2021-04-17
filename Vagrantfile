@@ -39,21 +39,6 @@ end
 end
 
 
-  config.vm.define "development-VM2" do |subconfig|
-    subconfig.vm.box = 'generic/centos8'
-    subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
-    subconfig.vm.provider :vmware_esxi do |esxi|
-    #  REQUIRED!  ESXi hostname/IP
-    esxi.esxi_hostname = '192.168.0.39' 
-    #  ESXi username
-    esxi.esxi_username = 'provision'
-    esxi.esxi_password = 'P@sswordP@ssword'
-    #  SSH port.
-    esxi.esxi_hostport = 22
-    esxi.guest_name = 'development-node02'
-    end
-   end
-
 
 
   config.vm.provision :chef_client do |chef| 
