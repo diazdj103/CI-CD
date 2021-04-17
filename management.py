@@ -3,7 +3,7 @@ import logging
 
 
 
-environment = os.environ("environment")
+environment = os.environ.get("environment")
 print (environment)
 
 def determine_environment (environment="development"):
