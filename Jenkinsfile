@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'Deploying..'
                 dir("webserver") {
-             sh "vagrant up"
+             sh "echo step"
               }
             }
         }
