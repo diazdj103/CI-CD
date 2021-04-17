@@ -28,7 +28,7 @@ Vagrant.configure('2') do |config|
     subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
     subconfig.vm.provider :vmware_esxi do |esxi|
     #  REQUIRED!  ESXi hostname/IP
-    esxi.esxi_hostname = '192.168.0.39' 
+    esxi.esxi_hostname = '192.168.0.166' 
     #  ESXi username
     esxi.esxi_username = 'provision'
     esxi.esxi_password = 'P@sswordP@ssword'
