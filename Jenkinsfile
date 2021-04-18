@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'bash plugins.sh'
+                sh 'python3 plugins.py'
             }
         }
         stage('Test') {
