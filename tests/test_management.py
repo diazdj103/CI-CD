@@ -14,4 +14,5 @@ class management_test(unittest.TestCase):
       self.assertTrue(determine_environment( environment="development"))
 # running the test
 
-unittest.main()
+if __name__ == "__main__":
+   unittest.main()
