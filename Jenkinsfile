@@ -13,6 +13,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                dir("tests") {
+             sh "python3 -m unittest"
+              }   
             }
         }
         stage('Deploying Subsystem 1') {
