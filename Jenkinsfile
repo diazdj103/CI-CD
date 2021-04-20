@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 dir("tests") {
-             sh "python3 -m unittest"
+             sh "python3 -m unittest discover"
               }   
             }
         }
