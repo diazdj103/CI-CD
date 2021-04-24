@@ -1,23 +1,3 @@
-#Testing for required plugins
-unless Vagrant.has_plugin?("vagrant-vmware-esxi")
-  raise <<-eos
-Error! Required 'vagrant-vmware-esxi' plugin is not installed.
-Please run 'vagrant plugin install vagrant-dns'
-eos
-end
-unless Vagrant.has_plugin?("vagrant-winrm-syncedfolders")
-  raise <<-eos
-Error! Required 'vagrant-winrm-syncedfolders' plugin is not installed.
-Please run 'vagrant plugin install vagrant-dns'
-eos
-end
-unless Vagrant.has_plugin?("vagrant-reload")
-  raise <<-eos
-Error! Required 'vagrant-reload' plugin is not installed.
-Please run 'vagrant plugin install vagrant-dns'
-eos
-end
-#####Testing Vagrant file complete
 
 
 #### Development deploys here
@@ -29,7 +9,7 @@ Vagrant.configure('2') do |config|
     config.vm.provider :vmware_esxi do |esxi|
     esxi.esxi_hostname = '192.168.0.166' 
     esxi.esxi_username = 'root'
-    esxi.esxi_password = 'GOdofwar103@@'
+    esxi.esxi_password = 'GOtohell103@@'
     esxi.esxi_hostport = 22
     esxi.guest_name = "development-vm1"
 end
@@ -40,7 +20,7 @@ end
     subconfig.vm.provider :vmware_esxi do |esxi|
     esxi.esxi_hostname = '192.168.0.166' 
     esxi.esxi_username = 'root'
-    esxi.esxi_password = 'GOdofwar103@@'
+    esxi.esxi_password = 'GOtohell103@@'
     esxi.esxi_hostport = 22
     esxi.guest_name = "development-vm2"
 end
@@ -52,7 +32,7 @@ config.vm.define "main-vm1" do |config|
   config.vm.provider :vmware_esxi do |esxi|
   esxi.esxi_hostname = '192.168.0.166' 
   esxi.esxi_username = 'root'
-  esxi.esxi_password = 'GOdofwar103@@'
+  esxi.esxi_password = 'GOtohell103@@'
   esxi.esxi_hostport = 22
   esxi.guest_name = "main-vm1"
 
@@ -64,7 +44,7 @@ config.vm.define "main-vm2" do |subconfig|
   subconfig.vm.provider :vmware_esxi do |esxi|
   esxi.esxi_hostname = '192.168.0.166' 
   esxi.esxi_username = 'root'
-  esxi.esxi_password = 'GOdofwar103@@'
+  esxi.esxi_password = 'GOtohell103@@'
   esxi.esxi_hostport = 22
   esxi.guest_name = "main-vm2"
 end
@@ -76,7 +56,7 @@ config.vm.define "production-vm1" do |config|
   config.vm.provider :vmware_esxi do |esxi|
   esxi.esxi_hostname = '192.168.0.166' 
   esxi.esxi_username = 'root'
-  esxi.esxi_password = 'GOdofwar103@@'
+  esxi.esxi_password = 'GOtohell103@@'
   esxi.esxi_hostport = 22
   esxi.guest_name = "production-vm1"
 end
@@ -87,7 +67,7 @@ config.vm.define "production-vm2" do |subconfig|
   subconfig.vm.provider :vmware_esxi do |esxi|
   esxi.esxi_hostname = '192.168.0.166' 
   esxi.esxi_username = 'root'
-  esxi.esxi_password = 'GOdofwar103@@'
+  esxi.esxi_password = 'GOtohell103@@'
   esxi.esxi_hostport = 22
   esxi.guest_name = "production-vm2"
 end
