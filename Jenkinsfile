@@ -7,12 +7,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'bash plugins.sh'
+                sh 'python3 plugins.py'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                dir("tests") {
+             sh "python3 -m unittest test_management.py"
+              }   
             }
         }
         stage('Deploying Subsystem 1') {
