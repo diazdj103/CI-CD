@@ -11,8 +11,7 @@ class management_test(unittest.TestCase):
    
    # return True or False
    def test_development(self):
-      mock_environment.determine_environment(environment)
-      #self.assertTrue(determine_environment(environment="development"))
+      self.assertTrue(determine_environment(environment="unittest"))
          
 # running the test
 

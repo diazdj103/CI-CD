@@ -73,6 +73,8 @@ config.vm.define "production-vm2" do |subconfig|
 end
 end
 
+
+
   config.vm.provision :chef_client do |chef| 
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
@@ -81,5 +83,17 @@ end
 	  chef.node_name = "Webserver01"
 	  chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
+end
+##unittest
+config.vm.define "unittest" do |subconfig|
+  subconfig.vm.box = 'generic/centos8'
+  subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
+  subconfig.vm.provider :vmware_esxi do |esxi|
+  esxi.esxi_hostname = '192.168.0.166' 
+  esxi.esxi_username = 'root'
+  esxi.esxi_password = 'GOtohell103@@'
+  esxi.esxi_hostport = 22
+  esxi.guest_name = "unittest"
+end
 end
 end
