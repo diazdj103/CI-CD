@@ -2,7 +2,7 @@ driver:
   name: vagrant
   provider: vmware_esxi
   vagrant_ipaddress: 192.168.0.166
-  vagrant_password: GOdofwar103@@
+  vagrant_password: GOtohell103@@
   vagrant_username: root
 provisioner:
   name: chef_zero
