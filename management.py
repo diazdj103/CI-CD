@@ -31,6 +31,8 @@ def determine_environment (environment):
     elif environment == unit_test
         if os.system("vagrant up unittest") !=0:
             logging.exception("Unittest failed")
+            os.system("vagrant destroy unittest") 
+            
 
     else:
         logging.exception("The wrong environment was called")
