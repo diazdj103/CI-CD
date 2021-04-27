@@ -10,6 +10,9 @@ class management_test(unittest.TestCase):
    # return True or False
    def test_development(self):
       self.assertTrue(determine_environment(environment="development"))
+   
+   def test_bad_environment(self):
+      self.assertTrue(determine_environment(environment="bad"))
          
 # running the test
 
