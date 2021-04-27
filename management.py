@@ -1,12 +1,17 @@
 import os
 import logging
 
-
+TEST_FLAG = os.environ.get("TEST_FLAG")
 environment = os.environ.get("environment")
 
 def determine_environment (environment):
     logging.info("The environment is " + environment)
-    if environment == "development":
+    if TEST_FLAG == "true":
+        if os.system("vagrant up unit_test") !=0:
+            logging.exception("Unittest failed")
+        else:
+            os.system("vagrant destroy unittest") 
+    elif environment == "development":
         logging.info("Depploying the development environment")
         if os.system("vagrant up development-vm1") !=0:
             logging.exception("Vagrant failed to deploy")
@@ -28,12 +33,6 @@ def determine_environment (environment):
             logging.exception("Vagrant failed to deploy")
         else:
             return True
-    elif environment == "unit_test":
-        if os.system("vagrant up unittest") !=0:
-            logging.exception("Unittest failed")
-            os.system("vagrant destroy unittest") 
-            
-
     else:
         logging.exception("The wrong environment was called")
 

@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'python3 plugins.py'
+                sh 'TEST_FLAG=true python3 plugins.py'
             }
         }
         stage('Test') {
