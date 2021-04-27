@@ -85,7 +85,7 @@ end
 	  chef.add_recipe "httpd_test::default"
 end
 ##unittest
-config.vm.define "unittest" do |subconfig|
+config.vm.define "unit_test" do |subconfig|
   subconfig.vm.box = 'generic/centos8'
   subconfig.vm.synced_folder('.', '/vagrant', type: 'nfs', disabled: true)
   subconfig.vm.provider :vmware_esxi do |esxi|
