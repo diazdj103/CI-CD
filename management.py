@@ -10,7 +10,8 @@ def determine_environment (environment):
         if os.system("vagrant up unit_test") !=0:
             logging.exception("Unittest failed")
         else:
-            os.system("vagrant destroy unittest") 
+            os.system("vagrant destroy unittest")
+            return True 
     elif environment == "development":
         logging.info("Depploying the development environment")
         if os.system("vagrant up development-vm1") !=0:

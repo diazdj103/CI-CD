@@ -7,14 +7,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'TEST_FLAG=true python3 plugins.py'
+                sh 'python3 plugins.py'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
                 dir("tests") {
-             sh "python3 -m unittest discover"
+             sh "TEST_FLAG=true python3 -m unittest discover"
               }   
             }
         }
