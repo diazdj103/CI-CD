@@ -6,7 +6,7 @@ environment = os.environ.get("environment")
 
 def determine_environment (environment):
     logging.info("The environment is " + environment)
-    if TEST_FLAG == "true":
+    if TEST_FLAG == "true" and environment != "bad":
         if os.system("vagrant up unit_test") !=0:
             logging.exception("Unittest failed")
         else:

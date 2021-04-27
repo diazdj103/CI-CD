@@ -12,7 +12,7 @@ class management_test(unittest.TestCase):
       self.assertTrue(determine_environment(environment="development"))
    
    def test_bad_environment(self):
-      self.assertTrue(determine_environment(environment="bad"))
+      self.assertFalse(determine_environment(environment="bad"))
          
 # running the test
 
