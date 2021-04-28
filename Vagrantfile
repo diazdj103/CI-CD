@@ -83,7 +83,7 @@ end
 	  chef.validation_key_path = ".chef/diazdj.pem"
 	  chef.validation_client_name = "diazdj"
 	  chef.node_name = "Webserver01"
-	  #chef.arguments = "--chef-license accept"
+	  chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
     chef.delete_node = true
     chef.delete_client = true
