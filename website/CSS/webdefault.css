@@ -1,0 +1,132 @@
+/**
+Name: Daniel Diaz
+Created: 04/27/2021
+
+
+ */
+
+
+a {
+
+    margin: 45px;
+    width: 100%;
+}
+
+
+
+
+body {
+    background: #ffffff url('../photos/backround.jpg') repeat ;
+}
+
+.footer {
+
+
+
+    width: 100%;
+}
+
+
+.keyspeakers {
+    clear: both;
+    width: 40%;
+    float: left;
+    display: block;
+    margin: 1%;
+    padding-right: 20%;
+    position: relative;
+    height: 10%;
+
+}
+
+
+
+
+
+/* The below code is for styling the keynote speakers
+
+ */
+
+/*
+Cursor highlight
+ */
+
+#nameportion {
+
+    cursor: text;
+}
+
+/* field set manipulation for registration
+
+ */
+
+
+.regformat:hover {
+      background-color: red;
+      font-weight: bold;
+    font-style: italic;
+
+}
+
+
+
+.menu {
+    display: block;
+
+
+}
+
+.cost {
+
+    width: 100%;
+
+}
+.section2 {
+
+display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.section {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+
+
+}
+
+.horizontalsection {
+clear:both;
+text-align: center;
+}
+
+.day {
+
+}
+
+.section3 {
+    display: block;
+
+    width: 50%;
+    text-align: center;
+    background-color: aqua;
+}
+
+#errorcolor {
+
+    background-color: aqua;
+}
+
+.pollsection {
+
+    display: block;
+    float: left;
+    width: 33%;
+
+
+}
