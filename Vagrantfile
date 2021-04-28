@@ -85,6 +85,8 @@ end
 	  chef.node_name = "Webserver01"
 	  #chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
+    chef.delete_node = true
+    chef.delete_client = true
 end
 ##unittest
 config.vm.define "unit_test" do |subconfig|
