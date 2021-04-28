@@ -74,8 +74,10 @@ end
 end
 
 
-  config.omnibus.chef_version = :latest
-  config.vm.provision :chef_client do |chef| 
+  
+  config.vm.provision :chef_client do |chef|
+    chef.channel = "stable"
+    chef.version = "12.10.24" 
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
 	  chef.validation_key_path = ".chef/diazdj.pem"
