@@ -74,7 +74,7 @@ end
 end
 
 
-
+  config.omnibus.chef_version = :latest
   config.vm.provision :chef_client do |chef| 
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
