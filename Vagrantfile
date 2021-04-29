@@ -74,8 +74,10 @@ end
 end
 
 
-
-  config.vm.provision :chef_client do |chef| 
+  
+  config.vm.provision :chef_client do |chef|
+    chef.channel = "stable"
+    chef.version = "16.1.0"
 	  chef.provisioning_path = "/etc/chef"
 	  chef.chef_server_url = "https://api.chef.io/organizations/diazdj"
 	  chef.validation_key_path = ".chef/diazdj.pem"
@@ -83,6 +85,8 @@ end
 	  chef.node_name = "Webserver01"
 	  chef.arguments = "--chef-license accept"
 	  chef.add_recipe "httpd_test::default"
+    chef.delete_node = true
+    chef.delete_client = true
 end
 ##unittest
 config.vm.define "unit_test" do |subconfig|
