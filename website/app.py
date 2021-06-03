@@ -4,7 +4,7 @@ from flask import Flask , render_template
 # Flask uses the import name to know where to look up resources, templates, static files, instance folder, etc
 app = Flask(__name__)
 
-@app.route("/index")
+@app.route("/")
 def home():
     return render_template('index.html')
 
